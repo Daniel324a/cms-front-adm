@@ -1,208 +1,86 @@
-import React from "react";
+import React from 'react';
 
-export const FilesTable = () => {
+export const FilesTable = ({files}) => {
   return (
-    <div class="col-12">
-      <div class="card">
-        <div class="card-body">
-          <h4 class="card-title">Bordered Table</h4>
-          <h6 class="card-subtitle">
-            Add<code>.table-bordered</code>for borders on all sides of the table
-            and cells.
-          </h6>
-          <div class="table-responsive">
-            <table class="table table-bordered">
-              <thead>
-                <tr>
-                  <th>Task</th>
-                  <th>Progress</th>
-                  <th>Deadline</th>
-                  <th class="text-nowrap">Action</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Lunar probe project</td>
-                  <td>
-                    <div class="progress progress-xs margin-vertical-10 ">
-                      <div
-                        class="progress-bar bg-danger"
-                        style={{ width: "35%", height: "6px" }}
-                      ></div>
-                    </div>
-                  </td>
-                  <td>May 15, 2015</td>
-                  <td class="text-nowrap">
-                    <a
-                      href="#!"
-                      data-toggle="tooltip"
-                      data-original-title="Edit"
-                    >
-                      {" "}
-                      <i class="fa fa-pencil text-inverse m-r-10"></i>{" "}
-                    </a>
-                    <a
-                      href="#!"
-                      data-toggle="tooltip"
-                      data-original-title="Close"
-                    >
-                      {" "}
-                      <i class="fa fa-close text-danger"></i>{" "}
-                    </a>
-                  </td>
-                </tr>
-                <tr>
-                  <td>Dream successful plan</td>
-                  <td>
-                    <div class="progress progress-xs margin-vertical-10 ">
-                      <div
-                        class="progress-bar bg-warning"
-                        // style="width: 50%; height:6px;"
-                      ></div>
-                    </div>
-                  </td>
-                  <td>July 1, 2015</td>
-                  <td class="text-nowrap">
-                    <a
-                      href="#!"
-                      data-toggle="tooltip"
-                      data-original-title="Edit"
-                    >
-                      {" "}
-                      <i class="fa fa-pencil text-inverse m-r-10"></i>{" "}
-                    </a>
-                    <a
-                      href="#!"
-                      data-toggle="tooltip"
-                      data-original-title="Close"
-                    >
-                      {" "}
-                      <i class="fa fa-close text-danger"></i>{" "}
-                    </a>
-                  </td>
-                </tr>
-                <tr>
-                  <td>Office automatization</td>
-                  <td>
-                    <div class="progress progress-xs margin-vertical-10 ">
-                      <div
-                        class="progress-bar bg-success"
-                        // style="width: 100%; height:6px;"
-                      ></div>
-                    </div>
-                  </td>
-                  <td>Apr 12, 2015</td>
-                  <td class="text-nowrap">
-                    <a
-                      href="#!"
-                      data-toggle="tooltip"
-                      data-original-title="Edit"
-                    >
-                      {" "}
-                      <i class="fa fa-pencil text-inverse m-r-10"></i>{" "}
-                    </a>
-                    <a
-                      href="#!"
-                      data-toggle="tooltip"
-                      data-original-title="Close"
-                    >
-                      {" "}
-                      <i class="fa fa-close text-danger"></i>{" "}
-                    </a>
-                  </td>
-                </tr>
-                <tr>
-                  <td>The sun climbing plan</td>
-                  <td>
-                    <div class="progress progress-xs margin-vertical-10 ">
-                      <div
-                        class="progress-bar bg-primary"
-                        // style="width: 70%; height:6px;"
-                      ></div>
-                    </div>
-                  </td>
-                  <td>Aug 9, 2015</td>
-                  <td class="text-nowrap">
-                    <a
-                      href="#!"
-                      data-toggle="tooltip"
-                      data-original-title="Edit"
-                    >
-                      {" "}
-                      <i class="fa fa-pencil text-inverse m-r-10"></i>{" "}
-                    </a>
-                    <a
-                      href="#!"
-                      data-toggle="tooltip"
-                      data-original-title="Close"
-                    >
-                      {" "}
-                      <i class="fa fa-close text-danger"></i>{" "}
-                    </a>
-                  </td>
-                </tr>
-                <tr>
-                  <td>Open strategy</td>
-                  <td>
-                    <div class="progress progress-xs margin-vertical-10 ">
-                      <div
-                        class="progress-bar bg-info"
-                        // style="width: 85%; height:6px;"
-                      ></div>
-                    </div>
-                  </td>
-                  <td>Apr 2, 2015</td>
-                  <td class="text-nowrap">
-                    <a
-                      href="#!"
-                      data-toggle="tooltip"
-                      data-original-title="Edit"
-                    >
-                      {" "}
-                      <i class="fa fa-pencil text-inverse m-r-10"></i>{" "}
-                    </a>
-                    <a
-                      href="#!"
-                      data-toggle="tooltip"
-                      data-original-title="Close"
-                    >
-                      {" "}
-                      <i class="fa fa-close text-danger"></i>{" "}
-                    </a>
-                  </td>
-                </tr>
-                <tr>
-                  <td>Tantas earum numeris</td>
-                  <td>
-                    <div class="progress progress-xs margin-vertical-10 ">
-                      <div
-                        class="progress-bar bg-inverse"
-                        // style="width: 50%; height:6px;"
-                      ></div>
-                    </div>
-                  </td>
-                  <td>July 11, 2015</td>
-                  <td class="text-nowrap">
-                    <a
-                      href="#!"
-                      data-toggle="tooltip"
-                      data-original-title="Edit"
-                    >
-                      {" "}
-                      <i class="fa fa-pencil text-inverse m-r-10"></i>{" "}
-                    </a>
-                    <a
-                      href="#!"
-                      data-toggle="tooltip"
-                      data-original-title="Close"
-                    >
-                      {" "}
-                      <i class="fa fa-close text-danger"></i>{" "}
-                    </a>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
+    <div>
+      <div class=''>
+        <div class='card shadow mb-4'>
+          <div className='card-header py-3'>
+            <h6 className='m-0 font-weight-bold text-primary'>
+              Lista de archivos
+            </h6>
+          </div>
+          <div class='card-body'>
+            <div class='table-responsive'>
+              <table class='table table-bordered'>
+                <thead>
+                  <tr>
+                    <th>N. Archivo</th>
+                    <th>Progreso</th>
+                    <th>Fecha de cracion</th>
+                    <th class='text-nowrap'>Acción</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Lunar probe project</td>
+                    <td>
+                      <div class='progress progress-xs margin-vertical-10 '>
+                        <div
+                          class='progress-bar bg-danger'
+                          style={{ width: '35%', height: '100$' }}
+                        ></div>
+                      </div>
+                    </td>
+                    <td>May 15, 2015</td>
+                    <td class='text-nowrap'>
+                      <button
+                        className='btn p-0 text-dark mr-3'
+                        data-toggle='tooltip'
+                        data-original-title='Edit'
+                      >
+                        <i class='fas fa-edit'></i>
+                      </button>
+                      <button
+                        className='btn p-0'
+                        data-toggle='tooltip'
+                        data-original-title='Close'
+                      >
+                        <i class='fas fa-times text-danger'></i>
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Dream successful plan</td>
+                    <td>
+                      <div class='progress progress-xs margin-vertical-10 '>
+                        <div
+                          class='progress-bar bg-warning'
+                          style={{ width: '85%', height: '100$' }}
+                        ></div>
+                      </div>
+                    </td>
+                    <td>July 1, 2015</td>
+                    <td class='text-nowrap'>
+                      <button
+                        className='btn p-0 text-dark mr-3'
+                        data-toggle='tooltip'
+                        data-original-title='Edit'
+                      >
+                        <i class='fas fa-edit'></i>
+                      </button>
+                      <button
+                        className='btn p-0'
+                        data-toggle='tooltip'
+                        data-original-title='Close'
+                      >
+                        <i class='fas fa-times text-danger'></i>
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
       </div>

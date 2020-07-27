@@ -42,7 +42,7 @@ export const UploadScreen = () => {
         <div className="col-lg-4">
           <div className="card shadow mb-4 mt-3">
             <div className="card-header py-3">
-              <h6 className="m-0 font-weight-bold text-primary">Dropzone</h6>
+              <h6 className="m-0 font-weight-bold text-primary">Zona de cargue</h6>
             </div>
             <div className="card-body">
               <DropZone>Arrastra y suelta los elementos aqui</DropZone>
