@@ -239,7 +239,7 @@ export const Navbar = () => (
             href="!#"
           >
             <span className="mr-2 d-none d-lg-inline text-gray-600 small">
-              Valerie Luna
+              User admin
             </span>
             <img
               alt="*"
