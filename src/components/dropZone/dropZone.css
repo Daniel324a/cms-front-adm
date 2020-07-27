@@ -1,8 +1,12 @@
 .dropzone {
-  border: 1px dashed blue;
+  border: 1px dashed gray;
   height: 450px;
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 5px;
+}
+
+.dropzone:hover {
+  border: 1px dashed blue;
 }
