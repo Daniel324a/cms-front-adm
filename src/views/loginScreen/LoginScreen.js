@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export const LoginScreen = () => {
   return (
@@ -18,7 +19,7 @@ export const LoginScreen = () => {
                     className="form-control form-control-user"
                     id="exampleInputEmail"
                     aria-describedby="emailHelp"
-                    placeholder="Tu Correo electronico..."
+                    placeholder="Tu correo electronico..."
                   />
                 </div>
                 <div className="form-group">
@@ -66,9 +67,9 @@ export const LoginScreen = () => {
               </form>
 
               <div className="text-center">
-                <a className="small" href="forgot-password.html">
+                <Link className="small" to="/auth/forgotPassword">
                   Olvide mi contraseña
-                </a>
+                </Link>
               </div>
               {/* <div className="text-center">
                 <a className="small" href="register.html">

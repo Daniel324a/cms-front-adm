@@ -5,10 +5,13 @@ import { HomeScreen } from "../views/homeScreen/HomeScreen";
 import { Navbar } from "../components/navbar/Navbar";
 import { Sidebar } from "../components/sidebar/Sidebar";
 import { Footer } from "../components/footer/Footer";
+import { ProductsScreen } from "../views/productsScreen/ProductsScreen";
+import { UploadScreen } from "../views/uploadsScreen/UploadScreen";
+import { CategoriesScreen } from "../views/categoriesScreen/CategoriesScreen";
+import { ClasificationsScreen } from "../views/clasificationsScreen/ClasificationsScreen";
+import { SubcategoriesScreen } from "../views/subcategoriesScreen/SubcategoriesScreen";
 
-import { AuthRouter } from "./AuthRouter";
-
-export const DashboardRouter = () => {
+export const DashboardRouter = ({ location }) => {
   return (
     <div id="page-top">
       <div id="wrapper">
@@ -18,7 +21,19 @@ export const DashboardRouter = () => {
             <Navbar />
             <div className="container-fluid">
               <Switch>
-                <Route path="/auth" component={AuthRouter} />
+                <Route exact path="/products" component={ProductsScreen} />
+                <Route exact path="/categories" component={CategoriesScreen} />
+                <Route
+                  exact
+                  path="/clasifications"
+                  component={ClasificationsScreen}
+                />
+                <Route
+                  exact
+                  path="/subcategories"
+                  component={SubcategoriesScreen}
+                />
+                <Route exact path="/uploads" component={UploadScreen} />
                 <Route exact path="/" component={HomeScreen} />
                 <Redirect exact to="/" />
               </Switch>

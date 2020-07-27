@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export const Sidebar = () => (
   <>
@@ -48,13 +49,14 @@ export const Sidebar = () => (
           data-parent="#accordionSidebar"
         >
           <div className="bg-white py-2 collapse-inner rounded">
-            <h6 className="collapse-header">Custom Components:</h6>
-            <a href="#!" className="collapse-item">
-              Buttons
-            </a>
-            <a href="#!" className="collapse-item">
-              Cards
-            </a>
+            {/* <h6 className="collapse-header">Custom Components:</h6> */}
+
+            <Link to="/admin/resources" className="collapse-item">
+              Administrar Recursos
+            </Link>
+            <Link to="/uploads" className="collapse-item">
+              Subir Recursos
+            </Link>
           </div>
         </div>
       </li>
@@ -78,19 +80,18 @@ export const Sidebar = () => (
           data-parent="#accordionSidebar"
         >
           <div className="bg-white py-2 collapse-inner rounded">
-            <h6 className="collapse-header">Custom Utilities:</h6>
-            <a href="#!" className="collapse-item">
-              Colors
-            </a>
-            <a href="#!" className="collapse-item">
-              Borders
-            </a>
-            <a href="#!" className="collapse-item">
-              Animations
-            </a>
-            <a href="#!" className="collapse-item">
-              Other
-            </a>
+            <Link to="/products" className="collapse-item">
+              Productos
+            </Link>
+            <Link to="clasifications" className="collapse-item">
+              Clasificaciones
+            </Link>
+            <Link to="categories" className="collapse-item">
+              Categorias
+            </Link>
+            <Link to="subcategories" className="collapse-item">
+              Subcategorias
+            </Link>
           </div>
         </div>
       </li>
