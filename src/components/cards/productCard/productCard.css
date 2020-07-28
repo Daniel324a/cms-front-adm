@@ -1,6 +1,6 @@
 .card-item {
   display: flex !important;
-  transition: transform 0.2s;
+  transition: transform 0.2s !important;
 }
 
 .card-item:hover {
