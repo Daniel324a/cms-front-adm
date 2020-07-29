@@ -5,7 +5,7 @@ export const AddProductModal = () => {
     <div className="modal-dialog">
       <div className="modal-content">
         <div className="modal-header">
-          <h5 className="modal-title" id="exampleModalLabel">
+          <h5 className="modal-title text-dark" id="exampleModalLabel">
             Añadir Producto
           </h5>
           <button
@@ -76,7 +76,7 @@ export const AddProductModal = () => {
             Cerrar
           </button>
           <button type="button" className="btn btn-primary">
-            Guardar
+            Añadir
           </button>
         </div>
       </div>
