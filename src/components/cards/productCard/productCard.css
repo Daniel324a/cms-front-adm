@@ -1,8 +1,17 @@
 .card-item {
+  margin: 15px !important;
   display: flex !important;
   transition: transform 0.2s !important;
+  height: 300px !important;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
 .card-item:hover {
   transform: scale(1.05);
+}
+
+.card-item img {
+  height: 150px;
+  top: 0;
+  object-fit: contain;
 }

@@ -1,6 +1,7 @@
-import React, { useContext } from 'react';
-import { TableFilesData } from '../../../context/TableFilesContext';
-import { ProgressBar } from '../../progressBar/ProgressBar';
+import React, { useContext } from "react";
+import { TableFilesData } from "../../../context/TableFilesContext";
+import { ProgressBar } from "../../progressBar/ProgressBar";
+import { cutLargeName } from "../../../utils/cutLargeName";
 
 export const FilesTable = ({ filesItem }) => {
   const { filesArray } = useContext(TableFilesData);
@@ -32,36 +33,35 @@ export const FilesTable = ({ filesItem }) => {
                   </tr>
                 </thead>
                 <tbody>
-                  {filesArray.map((item,i) => (
+                  {filesArray.map((item, i) => (
                     <tr key={item.name}>
                       <td>
                         <img
                           src={item.preview}
                           alt={item.name}
                           className='img-thumbnail'
-                          style={{ width: 100, height: 80 }}
-                        ></img>
+                          style={{ width: 100, height: 80 }}></img>
                       </td>
-                      <td className='align-middle'>{item.name}</td>
+                      <td className='align-middle'>
+                        {cutLargeName(item.name, 3, 12)}
+                      </td>
                       <td className='align-middle'>
                         <ProgressBar percent={item.progress} />
                       </td>
                       <td className='align-middle'>
-                        {Date(item.lastModified).slice(0,24)}
+                        {Date(item.lastModified).slice(0, 24)}
                       </td>
                       <td className='text-nowrap align-middle'>
                         <button
                           className='btn p-0 text-dark mr-3'
                           data-toggle='tooltip'
-                          data-original-title='Edit'
-                        >
+                          data-original-title='Edit'>
                           <i className='fas fa-check text-success'></i>
                         </button>
                         <button
                           className='btn p-0'
                           data-toggle='tooltip'
-                          data-original-title='Close'
-                        >
+                          data-original-title='Close'>
                           <i className='fas fa-times text-danger'></i>
                         </button>
                       </td>

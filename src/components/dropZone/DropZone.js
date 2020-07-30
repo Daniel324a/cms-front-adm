@@ -1,24 +1,18 @@
-import React, { useContext } from 'react';
-import { TableFilesData } from '../../context/TableFilesContext';
-import './dropZone.css';
+import React, { useContext } from "react";
+import { TableFilesData } from "../../context/TableFilesContext";
+import { checkDuplicateFiles } from "../../utils/checkDuplicateFiles";
+
+import "./dropZone.css";
 
 export const DropZone = ({ children, files, table }) => {
-  const { setfilesArray } = useContext(TableFilesData);
+  const { filesArray, setfilesArray } = useContext(TableFilesData);
 
-  const handlerDragEnter = (e) => {
-    e.preventDefault();
-  };
-
-  const handlerDragLeave = (e) => {
-    e.preventDefault();
-  };
-
-  const handlerDrop = (e) => {
+  const handlerDrop = e => {
     e.preventDefault();
     readFiles(e.dataTransfer);
   };
 
-  const handlerDragOver = (e) => {
+  const handlerDragOver = e => {
     e.preventDefault();
   };
 
@@ -27,25 +21,28 @@ export const DropZone = ({ children, files, table }) => {
       let entryFile = {
         name: file.name,
         lastModifiedDate: file.lastModified,
-        preview: '',
+        preview: "",
         progress: 0,
       };
 
       const reader = new FileReader();
 
-      reader.onerror = (e) => {
+      reader.onerror = e => {
         console.log(e);
       };
 
-      reader.onprogress = (e) => {
+      reader.onprogress = e => {
         entryFile.progress = (e.loaded / e.total) * 100;
       };
 
       reader.readAsDataURL(file);
 
-      reader.onload = (e) => {
+      reader.onload = e => {
         entryFile.preview = e.target.result;
-        setfilesArray((acc) => [...acc, entryFile]);
+
+        if (!checkDuplicateFiles(file, filesArray)) {
+          setfilesArray(acc => [...acc, entryFile]);
+        }
       };
     }
   };
@@ -53,11 +50,8 @@ export const DropZone = ({ children, files, table }) => {
   return (
     <div
       className={`dropzone`}
-      onDragEnter={handlerDragEnter}
-      onDragLeave={handlerDragLeave}
       onDragOver={handlerDragOver}
-      onDrop={(e) => handlerDrop(e)}
-    >
+      onDrop={e => handlerDrop(e)}>
       {children}
     </div>
   );

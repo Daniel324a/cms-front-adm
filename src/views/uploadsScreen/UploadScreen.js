@@ -1,11 +1,20 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
-import { DropZone } from '../../components/dropZone/DropZone';
-import { FilesTable } from '../../components/tables/filesTables/FilesTable';
-import { TableFilesData } from '../../context/TableFilesContext';
+import { DropZone } from "../../components/dropZone/DropZone";
+import { FilesTable } from "../../components/tables/filesTables/FilesTable";
+import { TableFilesData } from "../../context/TableFilesContext";
 
 export const UploadScreen = () => {
   const [filesArray, setfilesArray] = useState([]);
+  const [folder, setFolder] = useState(null);
+
+  const handlerSelect = ({ target }) => {
+    setFolder(target.value);
+  };
+
+  const handlerSubmit = e => {
+    console.log(e);
+  };
 
   return (
     <TableFilesData.Provider value={{ filesArray, setfilesArray }}>
@@ -28,17 +37,22 @@ export const UploadScreen = () => {
                       <i className='fas fa-folder-open'></i>
                     </span>
                   </div>
-                  <select className='form-control'>
-                    <option defaultValue>Selecciona un tipo de recurso</option>
-                    <option>Anuncios</option>
+                  <select
+                    className='form-control'
+                    defaultValue='default'
+                    onChange={handlerSelect}>
+                    <option value='default'>
+                      Selecciona un tipo de recurso
+                    </option>
+                    <option value='adds'>Anuncios</option>
                     <option value='banners'>Banners</option>
-                    <option>Notificaciones</option>
+                    <option value='notifications'>Notificaciones</option>
                     <option value='products'>Productos</option>
                   </select>
                 </div>
               </div>
             </div>
-            <FilesTable />
+            <FilesTable onClick={handlerSubmit} />
           </div>
 
           <div className='col-lg-4'>
