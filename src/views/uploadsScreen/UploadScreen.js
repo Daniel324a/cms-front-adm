@@ -1,11 +1,12 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 
-import { DropZone } from "../../components/dropZone/DropZone";
-import { FilesTable } from "../../components/tables/filesTables/FilesTable";
-import { TableFilesData } from "../../context/TableFilesContext";
+import { DropZone } from '../../components/dropZone/DropZone';
+import { FilesTable } from '../../components/tables/filesTables/FilesTable';
+import { TableFilesData } from '../../context/TableFilesContext';
 
-import { hostNode } from "../../global/enviroments";
-import { uploadImage } from "../../utils/uploadImage";
+import { hostNode } from '../../global/enviroments';
+import { uploadImage } from '../../utils/uploadImage';
+import Swal from 'sweetalert2';
 
 export const UploadScreen = () => {
   const [filesArray, setfilesArray] = useState([]);
@@ -15,12 +16,27 @@ export const UploadScreen = () => {
     setFolder(target.value);
   };
 
-  const handlerSubmit = e => {
+  const handlerSubmit = (e) => {
     e.preventDefault();
 
     if (folder != null) {
-      console.log(folder, filesArray);
-      uploadImage(folder, "naruto", filesArray[0]);
+      uploadImage(folder, 'naruto', [...filesArray])
+        .then((response) => {
+          Swal.fire({
+            icon: 'success',
+            title: response,
+            showConfirmButton: false,
+            timer: 1500,
+          });
+        })
+        .catch((err) => {
+          Swal.fire({
+            icon: 'error',
+            title: err,
+            showConfirmButton: false,
+            timer: 1500,
+          });
+        });
     }
   };
 
@@ -48,7 +64,8 @@ export const UploadScreen = () => {
                   <select
                     className='form-control'
                     defaultValue='default'
-                    onChange={handlerSelect}>
+                    onChange={handlerSelect}
+                  >
                     <option value='default'>
                       Selecciona un tipo de recurso
                     </option>

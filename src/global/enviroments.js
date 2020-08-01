@@ -1,1 +1,1 @@
-export const hostNode = "https://cms-e-node.herokuapp.com/";
+export const hostNode = "http://localhost:3001";

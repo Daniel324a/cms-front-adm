@@ -40,7 +40,7 @@ export const DropZone = ({ children, files, table }) => {
       reader.onload = e => {
         entryFile.preview = e.target.result;
 
-        if (!checkDuplicateFiles(file, file)) {
+        if (!checkDuplicateFiles(file, filesArray)) {
           setfilesArray(acc => [...acc, file]);
         }
       };
