@@ -1,15 +1,14 @@
 import React, { useState } from 'react';
+import Swal from 'sweetalert2';
 
 import { DropZone } from '../../components/dropZone/DropZone';
 import { FilesTable } from '../../components/tables/filesTables/FilesTable';
 import { TableFilesData } from '../../context/TableFilesContext';
-
-import { hostNode } from '../../global/enviroments';
 import { uploadImage } from '../../utils/uploadImage';
-import Swal from 'sweetalert2';
 
 export const UploadScreen = () => {
   const [filesArray, setfilesArray] = useState([]);
+  const [filesTable, setFilesTable] = useState([]);
   const [folder, setFolder] = useState(null);
 
   const handlerSelect = ({ target }) => {
@@ -28,6 +27,8 @@ export const UploadScreen = () => {
             showConfirmButton: false,
             timer: 1500,
           });
+          setFilesTable([]);
+          setfilesArray([]);
         })
         .catch((err) => {
           Swal.fire({
@@ -41,7 +42,9 @@ export const UploadScreen = () => {
   };
 
   return (
-    <TableFilesData.Provider value={{ filesArray, setfilesArray }}>
+    <TableFilesData.Provider
+      value={{ filesArray, setfilesArray, filesTable, setFilesTable }}
+    >
       <div>
         <h1 className='h3 mb-0 text-gray-800'>Subir recursos</h1>
         <div className='row'>

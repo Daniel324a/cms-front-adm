@@ -4,7 +4,7 @@ import { ProgressBar } from "../../progressBar/ProgressBar";
 import { cutLargeName } from "../../../utils/cutLargeName";
 
 export const FilesTable = ({ filesItem, onPress }) => {
-  const { filesArray } = useContext(TableFilesData);
+  const { filesTable } = useContext(TableFilesData);
 
   return (
     <div>
@@ -36,24 +36,23 @@ export const FilesTable = ({ filesItem, onPress }) => {
                   </tr>
                 </thead>
                 <tbody>
-                  {filesArray.map((item, i) => (
+                  {filesTable.map((item, i) => (
                     <tr key={item.name}>
                       <td>
-                        {/* <img
+                        <img
                           src={item.preview}
                           alt={item.name}
                           className='img-thumbnail'
-                          style={{ width: 100, height: 80 }}/> */}
-                        3
+                          style={{ width: 100, height: 80 }}/>
                       </td>
                       <td className='align-middle'>
                         {cutLargeName(item.name, 3, 12)}
                       </td>
                       <td className='align-middle'>
-                        {/* <ProgressBar percent={item.progress} /> */}2
+                        <ProgressBar percent={item.progress} />
                       </td>
                       <td className='align-middle'>
-                        {/* {Date(item.lastModified).slice(0, 24)} */}1
+                        {Date(item.lastModified).slice(0, 24)}
                       </td>
                       <td className='text-nowrap align-middle'>
                         <button
