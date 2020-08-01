@@ -3,7 +3,7 @@ import { TableFilesData } from "../../../context/TableFilesContext";
 import { ProgressBar } from "../../progressBar/ProgressBar";
 import { cutLargeName } from "../../../utils/cutLargeName";
 
-export const FilesTable = ({ filesItem }) => {
+export const FilesTable = ({ filesItem, onPress }) => {
   const { filesArray } = useContext(TableFilesData);
 
   return (
@@ -15,7 +15,10 @@ export const FilesTable = ({ filesItem }) => {
               <h6 className='m-0 font-weight-bold text-primary'>
                 Lista de archivos
               </h6>
-              <button type='button' className='btn btn-primary btn-sm mb-0'>
+              <button
+                type='button'
+                className='btn btn-primary btn-sm mb-0'
+                onClick={onPress}>
                 Subir todos
               </button>
             </div>
@@ -36,20 +39,21 @@ export const FilesTable = ({ filesItem }) => {
                   {filesArray.map((item, i) => (
                     <tr key={item.name}>
                       <td>
-                        <img
+                        {/* <img
                           src={item.preview}
                           alt={item.name}
                           className='img-thumbnail'
-                          style={{ width: 100, height: 80 }}></img>
+                          style={{ width: 100, height: 80 }}/> */}
+                        3
                       </td>
                       <td className='align-middle'>
                         {cutLargeName(item.name, 3, 12)}
                       </td>
                       <td className='align-middle'>
-                        <ProgressBar percent={item.progress} />
+                        {/* <ProgressBar percent={item.progress} /> */}2
                       </td>
                       <td className='align-middle'>
-                        {Date(item.lastModified).slice(0, 24)}
+                        {/* {Date(item.lastModified).slice(0, 24)} */}1
                       </td>
                       <td className='text-nowrap align-middle'>
                         <button

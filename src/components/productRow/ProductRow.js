@@ -1,9 +1,8 @@
 import React from "react";
 
-export const ProductRow = () => {
+export const ProductRow = ({ handler }) => {
   return (
-    <tr>
-      <th scope='row'>1</th>
+    <tr onClick={() => handler({ hola: "mundo" })}>
       <td>Iphone 12 Pro Max Turbo</td>
       <td>Celulo Mamalon</td>
       <td>6000000</td>

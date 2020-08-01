@@ -4,6 +4,9 @@ import { DropZone } from "../../components/dropZone/DropZone";
 import { FilesTable } from "../../components/tables/filesTables/FilesTable";
 import { TableFilesData } from "../../context/TableFilesContext";
 
+import { hostNode } from "../../global/enviroments";
+import { uploadImage } from "../../utils/uploadImage";
+
 export const UploadScreen = () => {
   const [filesArray, setfilesArray] = useState([]);
   const [folder, setFolder] = useState(null);
@@ -13,7 +16,12 @@ export const UploadScreen = () => {
   };
 
   const handlerSubmit = e => {
-    console.log(e);
+    e.preventDefault();
+
+    if (folder != null) {
+      console.log(folder, filesArray);
+      uploadImage(folder, "naruto", filesArray[0]);
+    }
   };
 
   return (
@@ -52,7 +60,7 @@ export const UploadScreen = () => {
                 </div>
               </div>
             </div>
-            <FilesTable onClick={handlerSubmit} />
+            <FilesTable onClick={handlerSubmit} onPress={handlerSubmit} />
           </div>
 
           <div className='col-lg-4'>

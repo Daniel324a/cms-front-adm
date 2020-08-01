@@ -27,29 +27,29 @@ export const ProductsOptionsBar = ({ product }) => {
 
   return (
     <div>
-      <div className='input-group mb-2 mt-3'>
-        <input
-          aria-label='Nombre de producto...'
-          aria-describedby='button-addon2'
-          className='form-control'
-          onChange={handleInputChange}
-          placeholder='Nombre de producto...'
-          type='text'
-          value={search}
-        />
-        <div className='input-group-append'>
-          <button
-            className='btn btn-outline-primary'
-            type='button'
-            id='button-addon2'>
-            Search
-            <i className='fas fa-fw fa-search ml-1'></i>
-          </button>
-        </div>
-      </div>
       <div
-        className={`${stickyState && "sticky"} options my-3 card shadow`}
+        className={`${stickyState && "sticky"} options mb-3 card shadow`}
         ref={optBar}>
+        <div className='input-group mb-2 ml-1 mt-1'>
+          <input
+            aria-label='Nombre de producto...'
+            aria-describedby='button-addon2'
+            className='form-control'
+            onChange={handleInputChange}
+            placeholder='Nombre de producto...'
+            type='text'
+            value={search}
+          />
+          <div className='input-group-append'>
+            <button
+              className='btn btn-outline-primary mr-2'
+              type='button'
+              id='button-addon2'>
+              Search
+              <i className='fas fa-fw fa-search ml-1'></i>
+            </button>
+          </div>
+        </div>
         <div className='row ml-1'>
           <button
             type='button'

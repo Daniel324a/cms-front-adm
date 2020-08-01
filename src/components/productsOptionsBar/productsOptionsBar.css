@@ -1,13 +1,11 @@
 .options {
-  padding-top: 5px;
   background-color: #ffffff;
   overflow: hidden;
 }
 
 .sticky {
-  padding-top: 8px;
   position: fixed;
   top: 0;
-  width: 100%;
+  width: 79%;
   z-index: 1000;
 }

@@ -21,7 +21,6 @@ export const ProductsScreen = () => {
       <h1 className='h3 mb-0 text-gray-800'>Administrador de Productos</h1>
       <ProductsOptionsBar product={product} />
       <ProductsTable products={products} />
-      {/* <div className="cards-grid row">{cards}</div> */}
     </div>
   );
 };
