@@ -48,7 +48,7 @@ export const Sidebar = () => (
           <div className='bg-white py-2 collapse-inner rounded'>
             {/* <h6 className="collapse-header">Custom Components:</h6> */}
 
-            <Link to='/admin/resources' className='collapse-item'>
+            <Link to='/resources' className='collapse-item'>
               Administrar Recursos
             </Link>
             <Link to='/uploads' className='collapse-item'>
