@@ -2,6 +2,12 @@
   min-width: 200px;
 }
 
-.pointer{
+.selected {
+  transform: scale(1.05 );
+  border:1px solid #5a5c69;
+  overflow: hidden;
+}
+
+.pointer {
   cursor: pointer;
 }
